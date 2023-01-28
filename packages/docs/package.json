@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "start-storybook -p 6006",
     "build": "build-storybook",
-    "test": "echo docs test"
+    "test": "echo docs test",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
   "author": "",
@@ -25,11 +26,12 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@libellum-ds/tokens": "*",
+    "@libellum-ds/eslint-config": "*",
     "@libellum-ds/react": "*",
-		"@libellum-ds/eslint-config": "*",
-    "@libellum-ds/ts-config": "*"
+    "@libellum-ds/tokens": "*",
+    "@libellum-ds/ts-config": "*",
+    "@storybook/storybook-deployer": "^2.8.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
