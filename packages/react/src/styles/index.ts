@@ -1,5 +1,3 @@
-import { createStitches, defaultThemeMap } from '@stitches/react'
-
 import {
   colors,
   fonts,
@@ -9,6 +7,7 @@ import {
   radii,
   space,
 } from '@libellum-ds/tokens'
+import { createStitches, defaultThemeMap } from '@stitches/react'
 
 export const {
   styled,

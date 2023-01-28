@@ -8,6 +8,7 @@
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --dts --watch --external react",
+    "test": "echo react test",
     "lint": "eslint src/**/*.ts* --fix"
   },
   "keywords": [],

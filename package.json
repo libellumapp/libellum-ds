@@ -7,11 +7,24 @@
 		"packages/tokens",
 		"packages/ts-config"
 	],
-  "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build"
-  },
+	"scripts": {
+		"dev": "turbo run dev --parallel",
+		"build": "turbo run build",
+    "test": "turbo run test",
+		"prepare": "husky install"
+	},
 	"devDependencies": {
+		"@commitlint/cli": "^17.4.2",
+		"@commitlint/config-conventional": "^17.4.2",
+		"commitizen": "^4.3.0",
+		"git-cz": "^4.9.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.1.0",
 		"turbo": "^1.7.0"
-	}
+	},
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
 }
