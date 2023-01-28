@@ -1,5 +1,6 @@
-import { colors } from '@libellum-ds/tokens'
 import { getContrast } from 'polished'
+
+import { colors } from '@libellum-ds/tokens'
 
 export const ColorsGrid = () => {
   return Object.entries(colors).map(([key, color]) => {

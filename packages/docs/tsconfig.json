@@ -1,6 +1,6 @@
 {
-    "extends": "@libellum-ds/ts-config/react.json",
-    "include": [
-      "src"
-    ]
-  }
+  "extends": "@libellum-ds/ts-config/react.json",
+  "include": [
+    "src"
+  ]
+}

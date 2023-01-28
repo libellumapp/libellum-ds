@@ -1,8 +1,5 @@
 {
-    "extends": [
-      "@libellum-ds/eslint-config"
-    ],
-    "rules": {
-      "react/display-name": "off"
-    }
-  }
+  "extends": [
+    "@libellum-ds/eslint-config"
+  ]
+}
