@@ -1,0 +1,5 @@
+{
+    "extends": [
+      "@libellum-ds/eslint-config"
+    ]
+  }
