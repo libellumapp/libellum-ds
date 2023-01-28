@@ -17,7 +17,7 @@ module.exports = {
   },
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = '/rar-ds/'
+      config.base = '/libellum-ds/'
     }
 
     return config
