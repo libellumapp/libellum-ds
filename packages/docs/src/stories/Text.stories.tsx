@@ -2,7 +2,7 @@ import { Text, TextProps } from '@libellum-ds/react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'Typograph/Text',
+  title: 'Typography/Text',
   component: Text,
   args: {
     type: 'body1',
