@@ -13,6 +13,12 @@ export default {
       options: ['normal', 'small'],
       control: { type: 'radio' },
     },
+    onCheckedChange: {
+      action: 'onCheckedChange',
+      table: {
+        disable: true,
+      },
+    },
   },
 } as Meta<SwitchProps>
 
