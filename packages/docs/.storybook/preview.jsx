@@ -1,5 +1,5 @@
 import React from 'react';
-import { darkMode, styled } from '@libellum-ds/react'
+import { darkMode } from '@libellum-ds/react'
 import { colors } from '@libellum-ds/tokens'
 
 export const parameters = {

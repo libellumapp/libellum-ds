@@ -4,6 +4,7 @@ import {
   fontSizes,
   fontWeights,
   lineHeights,
+  media,
   radii,
   space,
 } from '@libellum-ds/tokens'
@@ -25,7 +26,11 @@ export const {
     height: 'space',
   },
   theme: {
-    colors,
+    colors: {
+      ...colors,
+      'color-background': colors['color-neutral-10'],
+      'color-text': colors['color-neutral-90'],
+    },
     fonts,
     fontSizes,
     fontWeights,
@@ -33,6 +38,13 @@ export const {
     radii,
     space,
   },
+  media,
 })
 
-export const darkMode = createTheme({})
+export const darkMode = createTheme({
+  colors: {
+    ...colors,
+    'color-background': colors['color-neutral-90'],
+    'color-text': colors['color-neutral-10'],
+  },
+})

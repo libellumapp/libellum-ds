@@ -67,7 +67,6 @@ import {
   Whatsapp,
   YouTube,
 } from '@libellum-ds/react'
-import { colors } from '@libellum-ds/tokens'
 import { Meta, Story } from '@storybook/react'
 
 const Main = styled('main', {
@@ -98,6 +97,10 @@ const StyledWhatsapp = styled(Whatsapp, {
 })
 
 const StyledArrowSync = styled(ArrowSync, {
+  width: '48px',
+  height: '48px',
+  color: '$color-success-50',
+
   '&:hover': {
     color: '$color-theme-50',
   },
@@ -218,19 +221,16 @@ const ShowRoom = () => {
           Customizations (see more detail on {`"Docs"`} tab)
         </GroupIconstTitle>
         <IconsContainer>
-          <Whatsapp size={48} />
-          <StyledWhatsapp />
+          <Whatsapp onClick={() => alert('Whatsapp default clicked')} />
+          <Whatsapp size={32} onClick={() => alert('Whatsapp 32px clicked')} />
+          <StyledWhatsapp onClick={() => alert('StyledWhatsapp clicked')} />
 
-          <ArrowSync color={colors['color-success-50']} />
+          <ArrowSync onClick={() => alert('ArrowSync default clicked')} />
           <ArrowSync
-            size={48}
-            color="#239867"
-            onClick={() => console.log('ArrowSync clicked')}
+            size={32}
+            onClick={() => alert('ArrowSync 32px clicked')}
           />
-          <StyledArrowSync
-            size={48}
-            onClick={() => console.log('StyledArrowSync clicked')}
-          />
+          <StyledArrowSync onClick={() => alert('StyledArrowSync clicked')} />
         </IconsContainer>
       </GroupIconsContainer>
     </Main>
@@ -251,40 +251,65 @@ Icons.parameters = {
 // Default size is 24px
 // Default color is black for flexible color icons and original color for fixed color icons
 
-// Simple use.
-import { Whatsapp } from '@libellum-ds/react' // this is a fixed color icon
-<Whatsapp />
+// Fixed colors
 
-// Using an override style to change size
+//===========================================================================================
+// Simple use.
 import { Whatsapp } from '@libellum-ds/react'
+
+<Whatsapp onClick={() => alert('Whatsapp default clicked')} />
+
+//===========================================================================================
+// Change size by prop
+import { Whatsapp } from '@libellum-ds/react'
+
+<Whatsapp size={32} onClick={() => alert('Whatsapp 32px clicked')} />
+
+//===========================================================================================
+// Using an override style to change size
+import { styled } from '@libellum-ds/react'
+import { Whatsapp } from '@libellum-ds/react'
+
 const StyledWhatsapp = styled(Whatsapp, {
   width: '48px',
   height: '48px',
 })
+
 <StyledWhatsapp />
 
-// Change size and color with props
-import { ArrowSync } from '@libellum-ds/react' // this is a flexible color icon
-import { colors } from '@libellum-ds/tokens'
-<ArrowSync color={colors['color-success-50']} />
+// Flexible colors
+
+//===========================================================================================
+// Simple use
+import { ArrowSync } from '@libellum-ds/react'
+
+<ArrowSync onClick={() => alert('ArrowSync default clicked')} />
+
+//===========================================================================================
+// Change size by prop
+import { ArrowSync } from '@libellum-ds/react'
+
 <ArrowSync
-  size={48}
-  color="#239867"
-  onClick={() => console.log('ArrowSync clicked')}
+  size={32}
+  onClick={() => alert('ArrowSync 32px clicked')}
 />
 
-// Using an override style
+//===========================================================================================
+// Using an override style to change size and color
 import { styled } from '@libellum-ds/react'
 import { ArrowSync } from '@libellum-ds/react'
+
 const StyledArrowSync = styled(ArrowSync, {
+  width: '48px',
+  height: '48px',
+  color: '$color-success-50',
+
   '&:hover': {
     color: '$color-theme-50',
   },
 })
-<StyledArrowSync
-  size={48}
-  onClick={() => console.log('StyledArrowSync clicked')}
-/>
+
+<StyledArrowSync onClick={() => console.log('StyledArrowSync clicked')} />
       `,
     },
   },

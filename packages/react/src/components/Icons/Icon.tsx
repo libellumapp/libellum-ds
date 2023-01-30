@@ -1,6 +1,4 @@
-import { colors } from '@libellum-ds/tokens'
-
-import { darkMode, styled } from '../../styles'
+import { styled } from '../../styles'
 
 import { IconProps } from './types'
 
@@ -11,25 +9,15 @@ const IconContainer = styled('div', {
 
   width: '$$size',
   height: '$$size',
-  color: '$$color',
   cursor: '$$cursor',
-
-  [`.${darkMode} &`]: {
-    color: '$color-neutral-10',
-  },
+  color: '$color-text',
 })
 
-export const Icon = ({
-  children,
-  size = 24,
-  color = colors['color-neutral-90'],
-  ...props
-}: IconProps) => {
+export const Icon = ({ children, size = 24, ...props }: IconProps) => {
   return (
     <IconContainer
       css={{
         $$size: `${size}px`,
-        $$color: color,
         $$cursor: !props.onClick ? 'default' : 'pointer',
       }}
       {...props}

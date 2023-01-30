@@ -5,14 +5,9 @@ export default {
   title: 'Form/Switch',
   component: Switch,
   args: {
-    size: 'normal',
     disabled: false,
   },
   argTypes: {
-    size: {
-      options: ['normal', 'small'],
-      control: { type: 'radio' },
-    },
     onCheckedChange: {
       action: 'onCheckedChange',
       table: {
