@@ -34,3 +34,5 @@ export const {
     space,
   },
 })
+
+export const darkMode = createTheme({})
