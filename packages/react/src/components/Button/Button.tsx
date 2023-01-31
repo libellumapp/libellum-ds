@@ -57,19 +57,19 @@ export const Button = styled('button', {
           boxShadow: `inset 0px 0px 0px 4px ${colors['color-theme-50']}`,
         },
         '&:disabled': {
-          backgroundColor: '$color-neutral-70',
-          color: '$color-neutral-90',
+          backgroundColor: '$color-neutral-30',
+          color: '$color-neutral-10',
 
           '& *': {
-            color: '$color-neutral-90',
+            color: '$color-neutral-10',
           },
 
           [`.${darkMode} &`]: {
-            backgroundColor: '$color-neutral-30',
-            color: '$color-neutral-10',
+            backgroundColor: '$color-neutral-70',
+            color: '$color-neutral-90',
 
             '& *': {
-              color: '$color-neutral-10',
+              color: '$color-neutral-90',
             },
           },
         },
