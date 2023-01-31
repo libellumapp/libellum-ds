@@ -28,6 +28,7 @@ export const Button = styled('button', {
 
   '&:disabled': {
     cursor: 'default',
+    pointerEvents: 'none',
 
     '& *': {
       cursor: 'default',
