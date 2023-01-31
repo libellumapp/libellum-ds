@@ -1,13 +1,25 @@
-import { Button, ButtonProps } from '@libellum-ds/react'
+import { Button, ButtonProps, Search } from '@libellum-ds/react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'Form/Button',
   component: Button,
   args: {
-    children: 'Teste',
+    variant: 'primary',
+    disabled: false,
   },
   argTypes: {
+    children: {
+      table: {
+        disable: true,
+      },
+    },
+    variant: {
+      control: {
+        options: ['primary', 'outline'],
+        type: 'radio',
+      },
+    },
     onClick: {
       action: 'click',
       table: {
@@ -17,4 +29,42 @@ export default {
   },
 } as Meta<ButtonProps>
 
-export const Default: StoryObj<ButtonProps> = {}
+export const Basic: StoryObj<ButtonProps> = {
+  args: {
+    children: 'Clique aqui',
+  },
+}
+
+export const WithLeftIcon: StoryObj<ButtonProps> = {
+  args: {
+    children: (
+      <>
+        <Search />
+        Clique aqui
+      </>
+    ),
+  },
+}
+
+export const WithRightIcon: StoryObj<ButtonProps> = {
+  args: {
+    children: (
+      <>
+        Clique aqui
+        <Search />
+      </>
+    ),
+  },
+}
+
+export const WithBothSideIcons: StoryObj<ButtonProps> = {
+  args: {
+    children: [
+      <>
+        <Search />
+        Clique aqui
+        <Search />
+      </>,
+    ],
+  },
+}

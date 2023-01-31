@@ -1,7 +1,7 @@
 export const colors = {
   'color-theme-10': '#97B9FC',
   'color-theme-50': '#2E73F8',
-  'color-theme-80': '#17397C',
+  'color-theme-90': '#17397C',
 
   'color-success-10': '#A7D6C2',
   'color-success-50': '#239867',
