@@ -37,8 +37,12 @@ export const Button = styled('button', {
 
   '@tablet': {
     '&:focus': {
-      outline: '1px solid $color-neutral-90',
       outlineOffset: '2px',
+      outline: '1px solid $color-neutral-90',
+
+      [`.${darkMode} &`]: {
+        outline: '1px solid $color-neutral-10',
+      },
     },
   },
 
