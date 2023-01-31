@@ -1,6 +1,19 @@
 import React from 'react';
-import { darkMode } from '@libellum-ds/react'
-import { colors } from '@libellum-ds/tokens'
+import { darkMode, lightMode  } from '@libellum-ds/react'
+
+const MODES = [
+  {
+    name: 'light',
+    background: lightMode.colors['color-background'].value,
+    mode: lightMode
+  },
+  {
+    name: 'dark',
+    background: darkMode.colors['color-background'].value,
+    mode: darkMode
+  }
+]
+const DEFAULT_MODE = MODES[0]
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,29 +24,22 @@ export const parameters = {
     },
   },
   backgrounds: {
-    default: 'light',
-    values: [
-      {
-        name: 'light',
-        value: colors['color-neutral-10'],
-      },
-      {
-        name: 'dark',
-        value: colors['color-neutral-90'],
-      },
-    ],
+    default: DEFAULT_MODE.name,
+    values: MODES.map(({name, background}) => ({
+      name,
+      value: background
+    })),
   },
   layout: 'fullscreen'
 }
 
 export const decorators = [
   (Story, context) => {
-    const background = context.globals.backgrounds?.value ?? colors['color-neutral-10']
-    const theme = background === colors['color-neutral-10'] ? 'light' : 'dark'
-    const themeClass = theme === 'light' ? 'light' : darkMode
+    const currentModeBackground = context.globals.backgrounds?.value ?? DEFAULT_MODE.background
+    const currentMode = MODES.find((mode) => mode.background === currentModeBackground).mode || ''
 
     return (
-      <div className={themeClass} style={{ padding: '20px' }}>
+      <div className={currentMode} style={{ padding: '20px' }}>
         <Story />
       </div>
     )

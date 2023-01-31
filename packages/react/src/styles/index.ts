@@ -1,14 +1,7 @@
-import {
-  colors,
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  media,
-  radii,
-  space,
-} from '@libellum-ds/tokens'
+import { media } from '@libellum-ds/tokens'
 import { createStitches, defaultThemeMap } from '@stitches/react'
+
+import { theme as currentTheme } from './themes/light'
 
 export const {
   styled,
@@ -25,26 +18,9 @@ export const {
     width: 'space',
     height: 'space',
   },
-  theme: {
-    colors: {
-      ...colors,
-      'color-background': colors['color-neutral-10'],
-      'color-text': colors['color-neutral-90'],
-    },
-    fonts,
-    fontSizes,
-    fontWeights,
-    lineHeights,
-    radii,
-    space,
-  },
+  theme: currentTheme,
   media,
 })
 
-export const darkMode = createTheme({
-  colors: {
-    ...colors,
-    'color-background': colors['color-neutral-90'],
-    'color-text': colors['color-neutral-10'],
-  },
-})
+export { darkMode } from './themes/dark'
+export { lightMode } from './themes/light'
