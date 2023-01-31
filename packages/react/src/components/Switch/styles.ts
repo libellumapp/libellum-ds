@@ -18,10 +18,6 @@ export const SwitchRoot = styled(Switch.Root, {
     backgroundColor: '$color-neutral-70',
   },
 
-  '&:focus': {
-    boxShadow: `0 0 0 2px black`,
-  },
-
   '&[data-state="checked"]': {
     '&[data-disabled]': {
       border: '1px solid $color-neutral-30',
@@ -37,6 +33,11 @@ export const SwitchRoot = styled(Switch.Root, {
   '@tablet': {
     width: '$spacing-md',
     height: '$spacing-xs',
+
+    '&:focus': {
+      outline: '1px solid $color-neutral-90',
+      outlineOffset: '2px',
+    },
   },
 })
 
