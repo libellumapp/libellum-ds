@@ -2,13 +2,14 @@ import { ComponentProps, ElementType } from 'react'
 
 import { colors } from '@libellum-ds/tokens'
 
-import { darkMode, styled } from '../../styles'
+import { styled } from '../../styles'
+import { inDarkMode } from '../../styles/utils'
 
 export const Button = styled('button', {
   all: 'unset',
   boxSizing: 'border-box',
 
-  display: 'flex',
+  display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
 
@@ -40,9 +41,9 @@ export const Button = styled('button', {
       outlineOffset: '2px',
       outline: '1px solid $color-neutral-90',
 
-      [`.${darkMode} &`]: {
+      ...inDarkMode({
         outline: '1px solid $color-neutral-10',
-      },
+      }),
     },
   },
 
@@ -71,14 +72,14 @@ export const Button = styled('button', {
             color: '$color-neutral-10',
           },
 
-          [`.${darkMode} &`]: {
+          ...inDarkMode({
             backgroundColor: '$color-neutral-70',
             color: '$color-neutral-90',
 
             '& *': {
               color: '$color-neutral-90',
             },
-          },
+          }),
         },
       },
       outline: {
@@ -90,14 +91,14 @@ export const Button = styled('button', {
           color: '$color-neutral-90',
         },
 
-        [`.${darkMode} &`]: {
+        ...inDarkMode({
           color: '$color-neutral-10',
           boxShadow: `inset 0px 0px 0px 2px ${colors['color-neutral-10']}`,
 
           '& *': {
             color: '$color-neutral-10',
           },
-        },
+        }),
 
         '&:hover': {
           color: '$color-theme-50',
@@ -118,14 +119,14 @@ export const Button = styled('button', {
             color: '$color-neutral-30',
           },
 
-          [`.${darkMode} &`]: {
+          ...inDarkMode({
             boxShadow: `inset 0px 0px 0px 2px ${colors['color-neutral-70']}`,
             color: '$color-neutral-70',
 
             '& *': {
               color: '$color-neutral-70',
             },
-          },
+          }),
         },
       },
     },

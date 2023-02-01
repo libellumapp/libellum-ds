@@ -1,6 +1,7 @@
 import * as Switch from '@radix-ui/react-switch'
 
-import { darkMode, styled } from '../../styles'
+import { styled } from '../../styles'
+import { inDarkMode } from '../../styles/utils'
 
 export const SwitchRoot = styled(Switch.Root, {
   all: 'unset',
@@ -14,9 +15,9 @@ export const SwitchRoot = styled(Switch.Root, {
   height: '$spacing-sm',
   cursor: 'pointer',
 
-  [`.${darkMode} &`]: {
+  ...inDarkMode({
     backgroundColor: '$color-neutral-70',
-  },
+  }),
 
   '&[data-state="checked"]': {
     '&[data-disabled]': {
@@ -38,9 +39,9 @@ export const SwitchRoot = styled(Switch.Root, {
       outlineOffset: '2px',
       outline: '1px solid $color-neutral-90',
 
-      [`.${darkMode} &`]: {
+      ...inDarkMode({
         outline: '1px solid $color-neutral-10',
-      },
+      }),
     },
   },
 })
