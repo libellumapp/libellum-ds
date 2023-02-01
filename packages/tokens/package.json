@@ -1,6 +1,6 @@
 {
   "name": "@libellum-ds/tokens",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Design Sytem tokens of Libellum",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
