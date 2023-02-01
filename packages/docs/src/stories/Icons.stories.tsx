@@ -15,6 +15,7 @@ import {
   Board,
   Calendar,
   Certificate,
+  CheckMarkCircleFilled,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -24,7 +25,9 @@ import {
   Delete,
   Dismiss,
   DismissCircle,
+  DismissCircleFilled,
   DocumentRibbon,
+  ErrorCircleFilled,
   EyeOff,
   Facebook,
   Filter,
@@ -104,6 +107,14 @@ const StyledArrowSync = styled(ArrowSync, {
   '&:hover': {
     color: '$color-theme-50',
   },
+})
+
+const StyledErrorCircleFilled = styled(ErrorCircleFilled, {
+  color: '$color-error-50',
+})
+
+const StyledCheckMarkCircleFilled = styled(CheckMarkCircleFilled, {
+  color: '$color-success-50',
 })
 
 const ShowRoom = () => {
@@ -213,6 +224,15 @@ const ShowRoom = () => {
           <EyeOff onClick={() => handleIconClick('EyeOff')} />
           <DismissCircle onClick={() => handleIconClick('DismissCircle')} />
           <More onClick={() => handleIconClick('More')} />
+          <CheckMarkCircleFilled
+            onClick={() => handleIconClick('CheckMarkCircleFilled')}
+          />
+          <DismissCircleFilled
+            onClick={() => handleIconClick('DismissCircleFilled')}
+          />
+          <ErrorCircleFilled
+            onClick={() => handleIconClick('ErrorCircleFilled')}
+          />
         </IconsContainer>
       </GroupIconsContainer>
 
@@ -231,6 +251,11 @@ const ShowRoom = () => {
             onClick={() => alert('ArrowSync 32px clicked')}
           />
           <StyledArrowSync onClick={() => alert('StyledArrowSync clicked')} />
+
+          <StyledCheckMarkCircleFilled />
+          <StyledCheckMarkCircleFilled size={32} />
+          <StyledErrorCircleFilled />
+          <StyledErrorCircleFilled size={32} />
         </IconsContainer>
       </GroupIconsContainer>
     </Main>
@@ -297,7 +322,7 @@ import { ArrowSync } from '@libellum-ds/react'
 //===========================================================================================
 // Using an override style to change size and color
 import { styled } from '@libellum-ds/react'
-import { ArrowSync } from '@libellum-ds/react'
+import { ArrowSync, ErrorCircleFilled, CheckMarkCircleFilled } from '@libellum-ds/react'
 
 const StyledArrowSync = styled(ArrowSync, {
   width: '48px',
@@ -309,7 +334,20 @@ const StyledArrowSync = styled(ArrowSync, {
   },
 })
 
+const StyledErrorCircleFilled = styled(ErrorCircleFilled, {
+  color: '$color-error-50',
+})
+
+const StyledCheckMarkCircleFilled = styled(CheckMarkCircleFilled, {
+  color: '$color-success-50',
+})
+
 <StyledArrowSync onClick={() => console.log('StyledArrowSync clicked')} />
+
+<StyledCheckMarkCircleFilled />
+<StyledCheckMarkCircleFilled size={32} />
+<StyledErrorCircleFilled />
+<StyledErrorCircleFilled size={32} />
       `,
     },
   },
