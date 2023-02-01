@@ -34,10 +34,10 @@ export const StyledButtonLink = styled('a', {
   },
   '&:active': {
     backgroundColor: '$color-neutral-20',
-    color: '$color-theme-90',
+    color: '$color-neutral-90',
 
     '& *': {
-      color: '$color-theme-90',
+      color: '$color-neutral-90',
     },
 
     ...inDarkMode({
