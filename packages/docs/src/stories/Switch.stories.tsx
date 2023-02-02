@@ -20,5 +20,6 @@ export default {
 export const Default: StoryObj<SwitchProps> = {
   args: {
     disabled: false,
+    'aria-label': 'turn on/off',
   },
 }

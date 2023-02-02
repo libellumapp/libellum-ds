@@ -2,7 +2,7 @@ import { Button, ButtonProps, Search } from '@libellum-ds/react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'Form/Button',
+  title: 'Form/Buttons/Button',
   component: Button,
   args: {
     variant: 'primary',

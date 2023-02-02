@@ -2,7 +2,7 @@ import { ButtonLink, ButtonLinkProps, Search } from '@libellum-ds/react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'Form/ButtonLink',
+  title: 'Form/Buttons/ButtonLink',
   component: ButtonLink,
   args: {
     disabled: false,
