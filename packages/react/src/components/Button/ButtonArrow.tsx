@@ -13,7 +13,7 @@ const StyledButtonArrow = styled('button', {
 
   width: '$spacing-md',
   height: '$spacing-md',
-  border: 'none',
+  border: '1px solid $color-theme-50',
   borderRadius: '$full',
   cursor: 'pointer',
 
@@ -22,28 +22,41 @@ const StyledButtonArrow = styled('button', {
   },
 
   color: '$color-text',
-  backgroundColor: '$color-neutral-20',
+  backgroundColor: '$color-neutral-10',
 
   ...inDarkMode({
     backgroundColor: '$color-neutral-80',
   }),
 
   '&:hover': {
+    backgroundColor: '$color-theme-10',
     '& *': {
       color: '$color-theme-50',
     },
   },
+  '&:active': {
+    backgroundColor: '$color-neutral-30',
+    '& *': {
+      color: '$color-theme-50',
+    },
+
+    ...inDarkMode({
+      backgroundColor: '$color-neutral-70',
+    }),
+  },
   '&:disabled': {
     pointerEvents: 'none',
+    border: '1px solid $color-neutral-50',
 
     '& *': {
       color: '$color-neutral-50',
     },
 
-    backgroundColor: '$color-neutral-10',
+    backgroundColor: '$color-neutral-30',
 
     ...inDarkMode({
       backgroundColor: '$color-neutral-90',
+      border: '1px solid $color-neutral-50',
     }),
   },
 })
