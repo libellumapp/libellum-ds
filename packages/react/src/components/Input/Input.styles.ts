@@ -85,6 +85,7 @@ export const Input = styled('input', {
 
 export const Root = styled('div', {
   display: 'flex',
+  boxSizing: 'border-box',
   justifyContent: 'space-between',
   alignItems: 'center',
   columnGap: '$spacing-nano',

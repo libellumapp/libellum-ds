@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from 'react'
+import { forwardRef, useLayoutEffect, useRef } from 'react'
 
 import { Dismiss } from '../Icons'
 
@@ -19,6 +19,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     const inputContainerRef = useRef<HTMLDivElement | null>(null)
+
+    useLayoutEffect(() => {
+      const input = inputContainerRef.current?.querySelector('input')
+      if (input) {
+        input.classList.toggle('hasValue', !!input.value)
+        inputContainerRef.current?.parentElement?.classList.remove('focus')
+      }
+    }, [])
 
     return (
       <>
