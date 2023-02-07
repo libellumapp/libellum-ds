@@ -13,11 +13,9 @@ export const Label = styled('label', {
     disabled: {
       true: {
         backgroundColor: '$color-neutral-20',
-        color: '$color-neutral-40',
 
         ...inDarkMode({
           backgroundColor: '$color-neutral-80',
-          color: '$color-neutral-50',
         }),
       },
     },
@@ -43,6 +41,7 @@ export const Label = styled('label', {
 })
 
 export const Input = styled('input', {
+  all: 'unset',
   alignSelf: 'end',
 
   outline: 'none',
@@ -132,11 +131,23 @@ export const Root = styled('div', {
             borderColor: '$color-neutral-10',
           }),
         },
+
+        '&.focus': {
+          borderColor: '$color-neutral-80',
+
+          ...inDarkMode({
+            borderColor: '$color-neutral-10',
+          }),
+        },
       },
       success: {
         borderColor: '$color-success-10',
 
         '&:hover': {
+          borderColor: '$color-success-50',
+        },
+
+        '&.focus': {
           borderColor: '$color-success-50',
         },
       },
@@ -146,11 +157,19 @@ export const Root = styled('div', {
         '&:hover': {
           borderColor: '$color-alert-50',
         },
+
+        '&.focus': {
+          borderColor: '$color-alert-50',
+        },
       },
       error: {
         borderColor: '$color-error-10',
 
         '&:hover': {
+          borderColor: '$color-error-50',
+        },
+
+        '&.focus': {
           borderColor: '$color-error-50',
         },
       },

@@ -23,18 +23,23 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <>
         <S.Root
-          tabIndex={1}
+          tabIndex={disabled ? -1 : 1}
           disabled={disabled}
           state={state}
           onFocus={() => {
-            if (inputContainerRef && inputContainerRef.current) {
-              inputContainerRef.current.querySelector('input')?.focus()
+            const input = inputContainerRef.current?.querySelector('input')
+            if (input) {
+              input?.focus()
+              inputContainerRef.current?.parentElement?.classList.add('focus')
             }
           }}
           onBlur={() => {
             const input = inputContainerRef.current?.querySelector('input')
             if (input) {
               input.classList.toggle('hasValue', !!input.value)
+              inputContainerRef.current?.parentElement?.classList.remove(
+                'focus'
+              )
             }
           }}
         >
@@ -45,7 +50,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
 
           <S.InputContainer hasLabel={!!label} ref={inputContainerRef}>
-            <S.Input disabled={disabled} {...props} ref={ref} />
+            <S.Input
+              disabled={disabled}
+              {...props}
+              ref={ref}
+              autoComplete="off"
+            />
             {!!label && (
               <S.Label disabled={disabled} state={state}>
                 {label}
