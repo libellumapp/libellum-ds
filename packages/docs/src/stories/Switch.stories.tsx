@@ -7,19 +7,6 @@ export default {
   args: {
     disabled: false,
   },
-  argTypes: {
-    onCheckedChange: {
-      action: 'onCheckedChange',
-      table: {
-        disable: true,
-      },
-    },
-  },
 } as Meta<SwitchProps>
 
-export const Default: StoryObj<SwitchProps> = {
-  args: {
-    disabled: false,
-    'aria-label': 'turn on/off',
-  },
-}
+export const Default: StoryObj<SwitchProps> = {}
