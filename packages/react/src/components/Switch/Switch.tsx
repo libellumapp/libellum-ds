@@ -1,20 +1,53 @@
-import { forwardRef } from 'react'
-import { ComponentProps } from 'react'
+import { forwardRef, useCallback, useEffect, useState } from 'react'
 
-import * as S from './styles'
+import * as S from './Switch.styles'
 
-export type SwitchProps = ComponentProps<typeof S.SwitchRoot>
+export type SwitchProps = {
+  name?: string
+  value?: boolean
+  disabled?: boolean
+  onChange?: (newValue: boolean) => void
+}
 
-type Ref = HTMLButtonElement
+type Ref = HTMLInputElement | null
 
 export const Switch = forwardRef<Ref, SwitchProps>(
-  (props: SwitchProps, ref) => {
+  ({ name, value, disabled, onChange }: SwitchProps, forwardedRef) => {
+    const [state, setState] = useState<boolean>(false)
+
+    const handleClick = useCallback(() => {
+      setState((current) => {
+        const newValue = !current
+        onChange && onChange(newValue)
+        return newValue
+      })
+    }, [setState, onChange])
+
+    useEffect(() => {
+      setState(value ?? false)
+    }, [value])
+
     return (
-      <S.SwitchRoot {...props} ref={ref}>
-        <S.SwitchThumb {...props} />
-      </S.SwitchRoot>
+      <S.Root>
+        <S.Toggle
+          onClick={handleClick}
+          isTurnedOn={state}
+          disabled={disabled}
+          tabIndex={disabled ? -1 : 0}
+        >
+          <S.Selector isTurnedOn={state} disabled={disabled} />
+        </S.Toggle>
+
+        <S.Checkbox
+          ref={forwardedRef}
+          type="checkbox"
+          name={name}
+          checked={state}
+          onChange={() => {
+            /**nothing */
+          }}
+        />
+      </S.Root>
     )
   }
 )
-
-Switch.displayName = 'Switch'
