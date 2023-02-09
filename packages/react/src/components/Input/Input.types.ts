@@ -2,6 +2,8 @@ import { ComponentPropsWithRef } from 'react'
 
 import { Input } from './Input.styles'
 
+export type InputRef = HTMLInputElement
+
 export type InputProps = ComponentPropsWithRef<typeof Input> & {
   label?: string
   leftIcon?: JSX.Element

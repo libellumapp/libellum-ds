@@ -1,2 +1,2 @@
 export * from './Input'
-export { type InputProps } from './Input.types'
+export type { InputProps, InputRef } from './Input.types'

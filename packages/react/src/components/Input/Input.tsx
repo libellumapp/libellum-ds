@@ -1,58 +1,72 @@
-import { forwardRef, useLayoutEffect, useRef } from 'react'
+import React, {
+  forwardRef,
+  useCallback,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+} from 'react'
 
 import { Dismiss } from '../Icons'
 
 import * as S from './Input.styles'
-import { InputProps } from './Input.types'
+import { InputProps, InputRef } from './Input.types'
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<InputRef, InputProps>(
   (
     {
       label,
       leftIcon,
       hint,
-      onClear,
       disabled,
       state = 'default',
+      onClear,
       ...props
     }: InputProps,
-    ref
+    fowardedRef
   ) => {
-    const inputContainerRef = useRef<HTMLDivElement | null>(null)
+    const rootRef = useRef<HTMLDivElement | null>(null)
+    const inputRef = useRef<HTMLInputElement | null>(null)
 
-    // const input
     const hasValue =
       props.value !== null && props.value !== undefined && props.value !== ''
 
+    const handleClearClick = useCallback(() => {
+      onClear && onClear()
+      if (inputRef?.current) {
+        inputRef.current.value = ''
+        inputRef.current.blur()
+      }
+    }, [onClear])
+
     useLayoutEffect(() => {
-      const input = inputContainerRef.current?.querySelector('input')
-      if (input) {
-        input.classList.toggle('hasValue', !!input.value)
-        // inputContainerRef.current?.parentElement?.classList.remove('focus')
+      if (inputRef?.current) {
+        inputRef.current.classList.toggle('hasValue', !!inputRef.current.value)
+        rootRef.current?.classList.remove('focus')
+        if (!inputRef.current.value) inputRef.current.blur()
       }
     }, [])
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    useImperativeHandle(fowardedRef, () => inputRef?.current, [])
 
     return (
       <>
         <S.Root
+          ref={rootRef}
           tabIndex={disabled ? -1 : 1}
           disabled={disabled}
           state={state}
           onFocus={() => {
-            const input = inputContainerRef.current?.querySelector('input')
-            if (input) {
-              input?.focus()
-              inputContainerRef.current?.parentElement?.classList.add('focus')
-            }
+            inputRef.current?.focus()
+            rootRef.current?.classList.add('focus')
           }}
           onBlur={() => {
-            const input = inputContainerRef.current?.querySelector('input')
-            if (input) {
-              input.classList.toggle('hasValue', !!input.value)
-              inputContainerRef.current?.parentElement?.classList.remove(
-                'focus'
-              )
-            }
+            inputRef.current?.classList.toggle(
+              'hasValue',
+              !!inputRef.current.value
+            )
+            rootRef.current?.classList.remove('focus')
           }}
         >
           {!!leftIcon && (
@@ -61,11 +75,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             </S.LeftIconContainer>
           )}
 
-          <S.InputContainer hasLabel={!!label} ref={inputContainerRef}>
+          <S.InputContainer hasLabel={!!label}>
             <S.Input
               disabled={disabled}
               {...props}
-              ref={ref}
+              ref={inputRef}
               autoComplete="off"
               className={hasValue ? 'hasValue' : ''}
             />
@@ -78,16 +92,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
           {!!onClear && (
             <S.RightIconContainer disabled={disabled}>
-              <Dismiss
-                onClick={() => {
-                  onClear()
-                  if (!ref && inputContainerRef.current) {
-                    const input =
-                      inputContainerRef.current.querySelector('input')
-                    if (input) input.value = ''
-                  }
-                }}
-              />
+              <Dismiss onClick={handleClearClick} />
             </S.RightIconContainer>
           )}
         </S.Root>

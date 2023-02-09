@@ -9,7 +9,8 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
     { label, name, value, disabled, onSelect, children }: DropDownProps,
     forwardedRef
   ) => {
-    const itemsRef = useRef<HTMLUListElement | null>(null)
+    const inputRef = useRef<HTMLInputElement | null>(null)
+
     const {
       triggerRef,
       items,
@@ -26,6 +27,7 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
       //@ts-ignore
       () => {
         return {
+          ...inputRef?.current,
           reset() {
             selectItem(items[0])
           },
@@ -64,7 +66,7 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
         </S.Trigger>
 
         {/* Items */}
-        <S.Items isOpened={isOpen} ref={itemsRef} tabIndex={isOpen ? 0 : -1}>
+        <S.Items isOpened={isOpen} tabIndex={isOpen ? 0 : -1}>
           {children}
         </S.Items>
 
@@ -76,7 +78,7 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
           type="hidden"
           name={name}
           defaultValue={selectedValue}
-          ref={forwardedRef}
+          ref={inputRef}
         />
       </S.Root>
     )

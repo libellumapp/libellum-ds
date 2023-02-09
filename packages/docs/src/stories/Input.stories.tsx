@@ -9,6 +9,7 @@ export default {
     hint: 'Hint Label',
     disabled: false,
     state: 'default',
+    onClear: undefined,
   },
   argTypes: {
     state: {
