@@ -27,7 +27,7 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
       //@ts-ignore
       () => {
         return {
-          ...inputRef?.current,
+          ...inputRef.current,
           reset() {
             selectItem(items[0])
           },
@@ -75,7 +75,7 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
 
         {/* Hidden value handler */}
         <S.HideSelectedValue
-          type="hidden"
+          tabIndex={-1}
           name={name}
           defaultValue={selectedValue}
           ref={inputRef}
@@ -86,20 +86,10 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
 )
 
 export const DropDownContexted = forwardRef<DropDownRef, DropDownProps>(
-  (
-    { label, name, value, disabled, onSelect, children }: DropDownProps,
-    forwardedRef
-  ) => {
+  ({ children, ...props }: DropDownProps, forwardedRef) => {
     return (
       <DropDownProvider>
-        <DropDownComponent
-          name={name}
-          label={label}
-          value={value}
-          onSelect={onSelect}
-          disabled={disabled}
-          ref={forwardedRef}
-        >
+        <DropDownComponent {...props} ref={forwardedRef}>
           {children}
         </DropDownComponent>
       </DropDownProvider>

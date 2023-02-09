@@ -189,4 +189,10 @@ export const Hint = styled('div', {
   },
 })
 
-export const HideSelectedValue = styled('input', {})
+export const HideSelectedValue = styled('input', {
+  position: 'absolute',
+  top: 0,
+  opacity: '0',
+  visibility: 'hidden',
+  pointerEvents: 'none',
+})

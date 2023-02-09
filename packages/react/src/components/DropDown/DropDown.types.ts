@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
+import { MutableRefObject, PropsWithChildren, ReactNode } from 'react'
 
 //**************************************************************************/
 // DropDown
@@ -34,10 +34,10 @@ export type DropDownContextType = {
   addItem: (item: DropDownItemType) => void
   selectItem: (item: DropDownItemType) => void
   items: DropDownItemType[]
-  addItemRef: (item: React.MutableRefObject<HTMLLIElement | null>) => void
-  selectItemRef: (item: React.MutableRefObject<HTMLLIElement | null>) => void
-  itemsRef: React.MutableRefObject<HTMLLIElement | null>[]
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>
+  addItemRef: (item: MutableRefObject<HTMLLIElement | null>) => void
+  selectItemRef: (item: MutableRefObject<HTMLLIElement | null>) => void
+  itemsRef: MutableRefObject<HTMLLIElement | null>[]
+  triggerRef: MutableRefObject<HTMLButtonElement | null>
 }
 
 export type DropDownProviderProps = PropsWithChildren
