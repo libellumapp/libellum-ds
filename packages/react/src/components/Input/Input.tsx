@@ -20,11 +20,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const inputContainerRef = useRef<HTMLDivElement | null>(null)
 
+    // const input
+    const hasValue =
+      props.value !== null && props.value !== undefined && props.value !== ''
+
     useLayoutEffect(() => {
       const input = inputContainerRef.current?.querySelector('input')
       if (input) {
         input.classList.toggle('hasValue', !!input.value)
-        inputContainerRef.current?.parentElement?.classList.remove('focus')
+        // inputContainerRef.current?.parentElement?.classList.remove('focus')
       }
     }, [])
 
@@ -63,6 +67,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               {...props}
               ref={ref}
               autoComplete="off"
+              className={hasValue ? 'hasValue' : ''}
             />
             {!!label && (
               <S.Label disabled={disabled} state={state}>

@@ -1,4 +1,5 @@
 export * from './Button'
+export * from './DropDown'
 export * from './Icons'
 export * from './Input'
 export * from './Logo'

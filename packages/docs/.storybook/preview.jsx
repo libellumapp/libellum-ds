@@ -1,5 +1,14 @@
 import React from 'react';
-import { darkMode, lightMode  } from '@libellum-ds/react'
+import { darkMode, lightMode, globalCss } from '@libellum-ds/react'
+
+const globalCSS = globalCss({
+  '*': {
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box',
+    fontFamily: '$default',
+  },
+})
 
 // Define light and dark mode values
 const MODES = [
@@ -51,7 +60,7 @@ export const parameters = {
   },
   backgrounds: {
     default: DEFAULT_MODE.name,
-    values: MODES.map(({name, background}) => ({
+    values: MODES.map(({ name, background }) => ({
       name,
       value: background
     })),
@@ -66,6 +75,7 @@ export const decorators = [
   (Story, context) => {
     const currentMode = getCurrentMode(context.globals.backgrounds)
 
+    globalCSS()
     return (
       <div
         className={currentMode}
