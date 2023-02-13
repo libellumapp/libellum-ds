@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.2.2
+
+### Patch Changes
+
+- adding new icons
+
 ## 1.2.1
 
 ### Patch Changes
