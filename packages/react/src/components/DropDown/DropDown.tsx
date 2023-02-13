@@ -1,4 +1,5 @@
 import { forwardRef, memo, useEffect, useImperativeHandle, useRef } from 'react'
+import FocusLock from 'react-focus-lock'
 
 import * as S from './DropDown.styles'
 import { DropDownProps, DropDownRef } from './DropDown.types'
@@ -67,7 +68,7 @@ const DropDownComponent = forwardRef<DropDownRef, DropDownProps>(
 
         {/* Items */}
         <S.Items isOpened={isOpen} tabIndex={isOpen ? 0 : -1}>
-          {children}
+          <FocusLock disabled={!isOpen}>{children}</FocusLock>
         </S.Items>
 
         {/* Hint */}

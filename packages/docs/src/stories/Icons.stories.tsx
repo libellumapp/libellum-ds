@@ -30,18 +30,21 @@ import {
   ErrorCircleFilled,
   EyeOff,
   Facebook,
+  FacebookFlex,
   Filter,
   Flag,
   Globe,
   Google,
   Heart,
   Instagram,
+  InstagramFlex,
   Linkedin,
   List,
   Locked,
   Map,
   Merge,
   Messenger,
+  Money,
   MoneyHand,
   More,
   Multiselect,
@@ -66,9 +69,11 @@ import {
   Telegram,
   Text,
   Twitter,
+  TwitterFlex,
   Unlocked,
   Whatsapp,
   YouTube,
+  YoutubeFlex,
 } from '@libellum-ds/react'
 import { Meta, Story } from '@storybook/react'
 
@@ -195,6 +200,10 @@ const ShowRoom = () => {
           <Map onClick={() => handleIconClick('Map')} />
           <People onClick={() => handleIconClick('People')} />
           <RibbonOff onClick={() => handleIconClick('RibbonOff')} />
+          <FacebookFlex onClick={() => handleIconClick('FacebookFlex')} />
+          <InstagramFlex onClick={() => handleIconClick('InstagramFlex')} />
+          <TwitterFlex onClick={() => handleIconClick('TwitterFlex')} />
+          <YoutubeFlex onClick={() => handleIconClick('YoutubeFlex')} />
           <Flag onClick={() => handleIconClick('Flag')} />
           <Unlocked onClick={() => handleIconClick('Unlocked')} />
           <Alert onClick={() => handleIconClick('Alert')} />
@@ -206,6 +215,7 @@ const ShowRoom = () => {
           <Merge onClick={() => handleIconClick('Merge')} />
           <Multiselect onClick={() => handleIconClick('Multiselect')} />
           <QRCode onClick={() => handleIconClick('QRCode')} />
+          <Money onClick={() => handleIconClick('Money')} />
           <MoneyHand onClick={() => handleIconClick('MoneyHand')} />
           <List onClick={() => handleIconClick('List')} />
           <Open onClick={() => handleIconClick('Open')} />

@@ -52,9 +52,6 @@ const DropDownProvider = ({ children }: DropDownProviderProps) => {
           itemsRef[0].current?.focus()
         }
       }
-      // else {
-      //   triggerRef.current?.focus()
-      // }
 
       return newValue
     })
