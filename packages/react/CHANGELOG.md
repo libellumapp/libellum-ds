@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.2.3
+
+### Patch Changes
+
+- small adjustments
+
 ## 1.2.2
 
 ### Patch Changes

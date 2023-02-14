@@ -6,6 +6,7 @@ export default {
   component: ButtonLink,
   args: {
     disabled: false,
+    tabIndex: 1,
   },
   argTypes: {
     children: {

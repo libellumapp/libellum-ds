@@ -51,7 +51,7 @@ export const Input = forwardRef<InputRef, InputProps>(
     useImperativeHandle(fowardedRef, () => inputRef?.current, [])
 
     return (
-      <>
+      <div>
         <S.Root
           ref={rootRef}
           tabIndex={disabled ? -1 : 1}
@@ -98,7 +98,7 @@ export const Input = forwardRef<InputRef, InputProps>(
         </S.Root>
 
         <S.Hint state={state}>{hint}</S.Hint>
-      </>
+      </div>
     )
   }
 )

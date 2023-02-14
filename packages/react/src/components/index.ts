@@ -1,3 +1,4 @@
+export { inDarkMode } from '../styles/utils'
 export * from './Button'
 export * from './DropDown'
 export * from './Icons'

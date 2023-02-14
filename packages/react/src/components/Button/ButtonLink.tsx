@@ -49,6 +49,16 @@ export const StyledButtonLink = styled('a', {
       },
     }),
   },
+  '@tablet': {
+    '&:focus': {
+      outlineOffset: '2px',
+      outline: '1px solid $color-neutral-90',
+
+      ...inDarkMode({
+        outline: '1px solid $color-neutral-10',
+      }),
+    },
+  },
   variants: {
     disabled: {
       true: {
