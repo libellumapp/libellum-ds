@@ -13,4 +13,7 @@ module.exports = {
     '<rootDir>/src/**/*.test.(t|j)sx',
     '<rootDir>/src/**/*.test.(t|j)s',
   ],
+  moduleNameMapper: {
+    '^react($|/.+)': '<rootDir>/node_modules/react$1',
+  },
 }
