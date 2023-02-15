@@ -63,6 +63,10 @@ export const Input = styled('input', {
     },
   }),
 
+  '&::placeholder': {
+    opacity: 0,
+  },
+
   '&:focus': {
     [`& + ${Label}`]: {
       top: '4px',

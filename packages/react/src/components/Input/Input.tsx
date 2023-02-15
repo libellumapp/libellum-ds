@@ -82,6 +82,7 @@ export const Input = forwardRef<InputRef, InputProps>(
               ref={inputRef}
               autoComplete="off"
               className={hasValue ? 'hasValue' : ''}
+              placeholder={label ?? props.placeholder}
             />
             {!!label && (
               <S.Label disabled={disabled} state={state}>

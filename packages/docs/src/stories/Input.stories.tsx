@@ -10,6 +10,7 @@ export default {
     disabled: false,
     state: 'default',
     onClear: undefined,
+    placeholder: 'TESTE',
   },
   argTypes: {
     state: {

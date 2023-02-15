@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.2.4
+
+### Patch Changes
+
+- input component adjustments
+
 ## 1.2.3
 
 ### Patch Changes
