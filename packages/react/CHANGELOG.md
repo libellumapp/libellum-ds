@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.2.5
+
+### Patch Changes
+
+- adding role and aria-label to clear input button
+
 ## 1.2.4
 
 ### Patch Changes

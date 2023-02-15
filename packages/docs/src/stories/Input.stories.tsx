@@ -27,6 +27,11 @@ export default {
         disable: true,
       },
     },
+    placeholder: {
+      table: {
+        disable: true,
+      },
+    },
   },
 } as Meta<InputProps>
 

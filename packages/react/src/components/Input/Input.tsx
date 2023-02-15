@@ -1,5 +1,6 @@
-import React, {
+import {
   forwardRef,
+  KeyboardEvent,
   useCallback,
   useImperativeHandle,
   useLayoutEffect,
@@ -35,8 +36,18 @@ export const Input = forwardRef<InputRef, InputProps>(
       if (inputRef?.current) {
         inputRef.current.value = ''
         inputRef.current.blur()
+        inputRef.current.focus()
       }
     }, [onClear])
+
+    const handleInputKeyDown = useCallback(
+      (event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.code === 'Escape') {
+          handleClearClick()
+        }
+      },
+      [handleClearClick]
+    )
 
     useLayoutEffect(() => {
       if (inputRef?.current) {
@@ -83,6 +94,7 @@ export const Input = forwardRef<InputRef, InputProps>(
               autoComplete="off"
               className={hasValue ? 'hasValue' : ''}
               placeholder={label ?? props.placeholder}
+              onKeyDown={handleInputKeyDown}
             />
             {!!label && (
               <S.Label disabled={disabled} state={state}>
@@ -92,7 +104,11 @@ export const Input = forwardRef<InputRef, InputProps>(
           </S.InputContainer>
 
           {!!onClear && (
-            <S.RightIconContainer disabled={disabled}>
+            <S.RightIconContainer
+              disabled={disabled}
+              role="button"
+              aria-label={`clean button ${label ?? props.placeholder}`}
+            >
               <Dismiss onClick={handleClearClick} />
             </S.RightIconContainer>
           )}
