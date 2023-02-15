@@ -104,12 +104,12 @@ export const Input = forwardRef<InputRef, InputProps>(
           </S.InputContainer>
 
           {!!onClear && (
-            <S.RightIconContainer
-              disabled={disabled}
-              role="button"
-              aria-label={`clean button ${label ?? props.placeholder}`}
-            >
-              <Dismiss onClick={handleClearClick} />
+            <S.RightIconContainer disabled={disabled}>
+              <Dismiss
+                onClick={handleClearClick}
+                role="button"
+                aria-label={`clean button ${label ?? props.placeholder}`}
+              />
             </S.RightIconContainer>
           )}
         </S.Root>

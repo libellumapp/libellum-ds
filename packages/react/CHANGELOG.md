@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.2.6
+
+### Patch Changes
+
+- adding role and aria-label on icon props
+
 ## 1.2.5
 
 ### Patch Changes
