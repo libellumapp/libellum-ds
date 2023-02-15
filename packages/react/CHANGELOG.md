@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.2.7
+
+### Patch Changes
+
+- adding role and aria-label on input clean button
+
 ## 1.2.6
 
 ### Patch Changes
