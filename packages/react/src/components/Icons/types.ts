@@ -1,10 +1,5 @@
-import { HTMLAttributes } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
 
-export type CustomIconProps = {
+export type CustomIconProps = ComponentPropsWithoutRef<'div'> & {
   size?: number
-  role?: string
-  'aria-label'?: string
-  onClick?: () => void
 }
-
-export type IconProps = HTMLAttributes<HTMLDivElement> & CustomIconProps

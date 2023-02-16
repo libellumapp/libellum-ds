@@ -1,6 +1,6 @@
 import { styled } from '../../styles'
 
-import { IconProps } from './types'
+import { CustomIconProps } from './types'
 
 const IconContainer = styled('div', {
   display: 'inline-block',
@@ -13,7 +13,7 @@ const IconContainer = styled('div', {
   color: '$color-text',
 })
 
-export const Icon = ({ children, size = 24, ...props }: IconProps) => {
+export const Icon = ({ children, size = 24, ...props }: CustomIconProps) => {
   return (
     <IconContainer
       css={{
