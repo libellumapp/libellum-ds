@@ -35,6 +35,7 @@ import {
   Flag,
   Globe,
   Google,
+  GridDots,
   Heart,
   Instagram,
   InstagramFlex,
@@ -181,6 +182,7 @@ const ShowRoom = () => {
           Others (flexible color icons)
         </GroupIconstTitle>
         <IconsContainer>
+          <GridDots onClick={() => handleIconClick('GridDots')} />
           <ArrowSync onClick={() => handleIconClick('ArrowSync')} />
           <ArrowUpload onClick={() => handleIconClick('ArrowUpload')} />
           <ArrowDownload onClick={() => handleIconClick('ArrowDownload')} />

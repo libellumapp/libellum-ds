@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.3.0
+
+### Minor Changes
+
+- adding GridDots icon
+
 ## 1.2.8
 
 ### Patch Changes
