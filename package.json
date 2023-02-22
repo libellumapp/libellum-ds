@@ -31,8 +31,5 @@
     "commitizen": {
       "path": "git-cz"
     }
-  },
-  "dependencies": {
-    "react-focus-lock": "^2.9.3"
   }
 }
