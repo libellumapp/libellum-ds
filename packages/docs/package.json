@@ -4,7 +4,7 @@
   "description": "Documentation of Lebellum Design System",
   "main": "index.js",
   "scripts": {
-    "dev": "start-storybook -p 6006",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build": "build-storybook",
     "test": "echo docs test",
     "deploy-storybook": "storybook-to-ghpages"
