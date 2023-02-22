@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "build": "build-storybook",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "test": "echo docs test",
     "deploy-storybook": "storybook-to-ghpages"
   },
