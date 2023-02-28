@@ -1,0 +1,2 @@
+import{ax as t}from"./index-e28cface.js";import"./index-a38f3d31.js";import"./es.object.get-own-property-descriptor-d261b708.js";import"./jsx-runtime-69008c6b.js";import"./index-b042d21f.js";import"./inheritsLoose-c8b266dc.js";const m={title:"Form/Switch",component:t,args:{disabled:!1}},p={},c=["Default"];export{p as Default,c as __namedExportsOrder,m as default};
+//# sourceMappingURL=Switch.stories-52c671cd.js.map

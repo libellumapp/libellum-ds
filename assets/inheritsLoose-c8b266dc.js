@@ -1,0 +1,2 @@
+var c=Object.defineProperty;var e=(t,o)=>c(t,"name",{value:o,configurable:!0});function r(t,o){return r=Object.setPrototypeOf?Object.setPrototypeOf.bind():e(function(n,p){return n.__proto__=p,n},"_setPrototypeOf"),r(t,o)}e(r,"_setPrototypeOf");function y(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,r(t,o)}e(y,"_inheritsLoose");export{y as _,r as a};
+//# sourceMappingURL=inheritsLoose-c8b266dc.js.map

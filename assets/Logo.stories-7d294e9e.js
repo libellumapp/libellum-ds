@@ -1,0 +1,2 @@
+import{aw as o}from"./index-e28cface.js";import"./index-a38f3d31.js";import"./es.object.get-own-property-descriptor-d261b708.js";import"./jsx-runtime-69008c6b.js";import"./index-b042d21f.js";import"./inheritsLoose-c8b266dc.js";const m={title:"Others/Logo",component:o,args:{size:"normal"},argTypes:{size:{control:{options:["small","normal","large"],type:"radio"}}}},p={},l=["Defatult"];export{p as Defatult,l as __namedExportsOrder,m as default};
+//# sourceMappingURL=Logo.stories-7d294e9e.js.map
