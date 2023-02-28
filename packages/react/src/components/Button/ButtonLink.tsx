@@ -15,6 +15,7 @@ export const StyledButtonLink = styled('a', {
   fontSize: '$md',
   fontWeight: '$bold',
   color: '$color-theme-50',
+  transition: 'all .3s ease-in-out',
 
   backgroundColor: 'transparent',
   borderRadius: '$xs',

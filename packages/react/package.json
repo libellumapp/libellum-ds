@@ -1,6 +1,6 @@
 {
   "name": "@libellum-ds/react",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Components of Libellum",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

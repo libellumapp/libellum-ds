@@ -1,5 +1,11 @@
 # @libellum-ds/react
 
+## 1.4.1
+
+### Patch Changes
+
+- adjust some styles
+
 ## 1.4.0
 
 ### Minor Changes

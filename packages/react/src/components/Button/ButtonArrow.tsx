@@ -16,6 +16,7 @@ const StyledButtonArrow = styled('button', {
   border: '1px solid $color-theme-50',
   borderRadius: '$full',
   cursor: 'pointer',
+  transition: 'all .3s ease-in-out',
 
   '& *': {
     cursor: 'pointer',

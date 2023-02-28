@@ -22,6 +22,7 @@ export const Button = styled('button', {
   borderRadius: '$md',
   cursor: 'pointer',
   height: '$spacing-lg',
+  transition: 'all .3s ease-in-out',
 
   '& *': {
     cursor: 'pointer',

@@ -20,6 +20,7 @@ export const Trigger = styled('button', {
   border: '1px solid $color-neutral-40',
   borderRadius: '$md',
   cursor: 'pointer',
+  transition: 'all .3s ease-in-out',
 
   backgroundColor: '$color-neutral-10',
 

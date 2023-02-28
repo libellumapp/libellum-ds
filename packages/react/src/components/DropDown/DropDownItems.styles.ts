@@ -7,6 +7,7 @@ export const Item = styled('li', {
   fontWeight: '$medium',
   border: '1px solid transparent',
   color: '$color-text',
+  transition: 'all .3s ease-in-out',
 
   '&:hover': {
     backgroundColor: '$color-theme-50',

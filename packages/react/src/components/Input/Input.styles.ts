@@ -100,6 +100,7 @@ export const Root = styled('div', {
 
   border: '1px solid $color-neutral-40',
   borderRadius: '$md',
+  transition: 'all .3s ease-in-out',
 
   '&:hover': {
     borderColor: '$color-neutral-80',
